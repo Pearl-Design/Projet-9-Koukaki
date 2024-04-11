@@ -8,9 +8,39 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-.toto {
-  font-size: 10px;
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.toto__title {
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.banner {
+  opacity: 0;
+  animation: fadeInFromTop 1.5s ease forwards;
+}
+.banner img {
+  animation: fadeInFromBottom 1.5s ease forwards;
+  position: absolute;
+  opacity: 0;
+}
+
+.story {
+  animation: fadeInFromBottom 1.5s ease forwards;
+}
+.story .story__article {
+  position: fixed;
 }

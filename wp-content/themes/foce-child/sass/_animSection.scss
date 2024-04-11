@@ -1,0 +1,38 @@
+@import 'mixin';
+
+@keyframes fadeInFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+.banner {
+    opacity: 0;
+    @include animTop;
+    & img {
+        @include animBottomPosition;
+    }
+}
+
+.story {
+    @include animBottom;
+    & .story__article{
+        position: fixed
+    }
+}

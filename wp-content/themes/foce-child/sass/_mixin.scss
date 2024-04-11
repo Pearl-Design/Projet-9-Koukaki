@@ -1,0 +1,13 @@
+@mixin animTop {
+    animation: fadeInFromTop 1.5s ease forwards;
+}
+
+@mixin animBottom{
+    animation: fadeInFromBottom 1.5s ease forwards; 
+}
+
+@mixin animBottomPosition{
+    animation: fadeInFromBottom 1.5s ease forwards; 
+    position:absolute;
+    opacity: 0;
+}
