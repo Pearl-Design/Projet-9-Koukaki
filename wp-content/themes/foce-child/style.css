@@ -38,9 +38,22 @@
   opacity: 0;
 }
 
-.story {
+.animate {
   animation: fadeInFromBottom 1.5s ease forwards;
 }
-.story .story__article {
-  position: fixed;
+
+#studio, .nomination {
+  opacity: 0;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer ul::after, .site-footer::after {
+  animation: rotateImage 20s linear infinite;
 }

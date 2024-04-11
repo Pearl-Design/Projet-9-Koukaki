@@ -30,9 +30,12 @@
     }
 }
 
-.story {
-    @include animBottom;
-    & .story__article{
-        position: fixed
-    }
+.animate {
+        @include animBottom;
 }
+
+#studio, .nomination{opacity: 0;}
+
+
+
+
