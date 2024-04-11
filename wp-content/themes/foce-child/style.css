@@ -54,6 +54,38 @@
     transform: rotate(360deg);
   }
 }
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer ul::after, .site-footer::after {
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer ul::after, .site-footer::after, .nomination::before, .nomination::after {
   animation: rotateImage 20s linear infinite;
+}
+
+.nomination {
+  display: flex;
+  width: 80%;
+  margin: 150px auto;
+  position: relative;
+}
+.nomination::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: -85px;
+  top: -148px;
+}
+.nomination h2 {
+  font-size: 3rem;
+  background-image: url("./assets/images/orange_bg.png");
+  background-size: 94%;
+  box-sizing: border-box;
+}
+.nomination img {
+  width: 279px;
+  height: 129px;
+  display: inline-block;
+  margin-top: 33px;
+  margin-left: -40px;
+}
+.nomination::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -210px;
+  top: -170px;
 }
