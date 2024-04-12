@@ -158,6 +158,34 @@ h2 .animateTitle {
   animation-delay: 0.3s;
 }
 
+.carrousel {
+  max-width: 1200px;
+  width: 100%;
+  margin: 50px auto 0;
+}
+.carrousel h3 {
+  text-align: left;
+  background-position: left;
+  padding: 50px 60px;
+  background-image: url("./assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+}
+.carrousel .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.carrousel .swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 440px;
+}
+.carrousel .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
 @media (max-width: 767.98px) {
   .banner video {
     display: none;

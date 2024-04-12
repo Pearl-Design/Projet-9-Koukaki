@@ -13,7 +13,7 @@ get_header();
     <article class="story__article">
       <p><?php echo get_theme_mod('story'); ?></p>
     </article>
-    <article></article>
+      <?php get_template_part('template-parts/carrousel'); ?>
     <article id="place">
       <div>
         <h3>Le Lieu</h3>
