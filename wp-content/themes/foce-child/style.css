@@ -186,6 +186,27 @@ h2 .animateTitle {
   width: 100%;
 }
 
+.story #place {
+  background: url("./assets/images/image_place.png");
+  position: relative;
+}
+.story #place .bigCloud,
+.story #place .littleCloud {
+  filter: blur(10px);
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+  position: absolute;
+  z-index: 1;
+}
+.story #place .bigCloud {
+  right: 8%;
+  top: 10%;
+}
+.story #place .littleCloud {
+  right: 34%;
+  top: 34%;
+}
+
 @media (max-width: 767.98px) {
   .banner video {
     display: none;

@@ -84,6 +84,30 @@ const swiper = new Swiper(".swiper", {
         modifier: 1,
     },
 });
-  
-  
+
+
+/* NUAGE */
+document.addEventListener('DOMContentLoaded', function () {
+    const place = document.getElementById('place');
+    const bigCloud = place.querySelector('.bigCloud');
+    const littleCloud = place.querySelector('.littleCloud');
+
+    window.addEventListener('scroll', function () {
+        const scrollPosition = window.scrollY;
+
+        moveClouds(bigCloud, littleCloud, scrollPosition);
+    });
+});
+
+function moveClouds(bigCloud, littleCloud, scrollPosition) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollPosition / maxScroll;
+    
+    const xPosBig = -progress * 500; // 200 est la quantité de déplacement souhaitée
+    const xPosLittle = -progress * 500; // 100 est la quantité de déplacement souhaitée
+
+    bigCloud.style.transform = `translateX(${xPosBig}px)`;
+    littleCloud.style.transform = `translateX(${xPosLittle}px)`;
+}
+
 
