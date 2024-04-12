@@ -21,21 +21,59 @@
       transform: translateY(0);
     }
 }
+
+@keyframes fadeInLogo {
+  0% {
+      transform : translateY(300px);
+  opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+  opacity: 1;
+  }
+}
+
+
+@keyframes floatLogo {
+  0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-15px, 11px);
+    }
+    50%{
+        transform: translate(0, 15px);
+    }
+    75%{
+        transform: translate(15px, 10px);
+    }
+    100% {
+      transform: translate(0);
+    }
+}
   
 .banner {
-    opacity: 0;
-    @include animTop;
-    & img {
-        @include animBottomPosition;
-    }
+  opacity: 0;
+  animation: fadeInFromTop 1.5s ease forwards;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  & .video {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}
+& img {
+  position: absolute;
+  top: 220px;
+  left: 350px;
+  z-index: 2;
+  animation: floatLogo 2s ease-in-out infinite, fadeInLogo 2s ease-in-out;
+}
 }
 
 .animateSection {
-        @include animBottom;
+  animation: fadeInFromBottom 1.5s ease forwards;
 }
 
-#studio, .nomination{opacity: 0;}
-
-
-
-
+.story, #studio, .nomination{opacity: 0;}

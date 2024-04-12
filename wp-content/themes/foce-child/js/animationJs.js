@@ -1,3 +1,4 @@
+/* ANIMATION DES SECTIONS A L AFFICHAGE A L ECRAN */
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.story, #studio, .nomination');
 
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('animateSection');
                 setTimeout(() => {
                     animateTitle(entry.target);
-                }, 1500); // Delay set to 3 seconds
+                }, 1500); // Delay set to 1.5 seconds
                 observer.unobserve(entry.target);
             }
         });
@@ -48,3 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* PARALLAXE VIDEO */
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.video');
+
+    new simpleParallax(video, {
+        orientation: 'right',
+        scale: 1.15,
+        delay: 0.5,
+        transition: 'ease-in-out'
+    });
+});
+

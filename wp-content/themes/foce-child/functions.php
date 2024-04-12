@@ -28,5 +28,3 @@ function enqueue_custom_script() {
     wp_enqueue_script( 'child-script', get_stylesheet_directory_uri() . '/js/animationJs.js', array(), '1.0', true );
 }
 
-
-

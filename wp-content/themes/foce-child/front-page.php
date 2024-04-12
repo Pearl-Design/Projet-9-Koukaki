@@ -3,7 +3,11 @@
 get_header();
 ?>
 <main id="primary" class="site-main">
-  <section class="banner"> <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"> </section>
+  <section class="banner">
+    <video class="video" autoplay muted loop poster="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>">
+      <source src="<?php echo get_theme_file_uri() . '/assets/video/StudioKoukakiVideo.mp4'; ?>" type="video/mp4">
+    </video>
+    <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants"> </section>
   <section id="#story" class="story">
     <h2>L'histoire</h2>
     <article class="story__article">
