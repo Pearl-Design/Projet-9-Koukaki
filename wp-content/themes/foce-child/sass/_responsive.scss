@@ -1,20 +1,99 @@
 @media (max-width: 991.98px) {
+  .navFullMenu__animimg{
+    display: none;
+  }
+
+  .nomination{
+    flex-direction: column;
+    margin: 50px auto;
+
+    h2 {
+      font-size: 2rem;
+      line-height: 4.8rem;
+    }
+    img{
+      margin:0 auto
+    }
+  }
+
+  
+  
+  .main-navigation .navFullMenu .navFullMenu__menu li{
+    &:last-child{
+      position: fixed;
+      bottom: 12%;
+      width: 100%;
+    }
+
+    a {
+      font-size: 40px;
+    }
+  }
+  .banner {
+    min-height: 500px;
     
+    img{
+      top:40%
+    }
+  }
+
+  .bigCloud, .littleCloud{
+    display: none;
+  }
+  
 }
 
 
 @media (max-width: 767.98px) {
-    .banner video{display: none}
-      }
+    .banner video{display: none
+    }
+    .main-navigation .menu-toggle{
+      right:20px;
+      height: 74px;
+    }
+    .carrousel h3{
+      text-align: center;
+      background-position: center;
+    }
+    .nomination h2 {
+      line-height: 3rem;
+    }
+    .nomination::before, .nomination::after, .site-footer ul::after{
+      display: none;
+    }
+    .site-footer{
+      padding-top: 0;
+    }
+}
 
 @media (max-width: 575.98px) {
+    .site-title a{
+        text-align: left;
+        font-size: 20px;
+        width: 170px;
+        line-height: 22px;
+        margin: 15px 20px;
+      }
+      .main-navigation .navFullMenu{
+        top:73px;
+
+        .navFullMenu__menu li {
+          margin: 4.8% 0;
     
+          a {
+            font-size: 30px;
+          }
+        }
+      }
+  .banner {
+    min-height: 350px;
+    height: auto;
   }
-  
-
-
-  
-
- 
-
-  
+  h2{font-size: 2rem;}
+  .nomination h2 {
+    font-size: 1.5rem;
+    line-height: 2.9rem;
+    padding: 0;
+    background-size: 100%;
+  }
+  }
