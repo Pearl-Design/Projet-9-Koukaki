@@ -3,12 +3,11 @@
 get_header();
 ?>
 <main id="primary" class="site-main">
-  <section class="banner">
-    <video class="video" autoplay muted loop poster="<?php echo get_theme_file_uri() . '/assets/images/banner.png'; ?>">
-      <source src=<?php echo get_theme_file_uri() . '/assets/video/StudioKoukakiVideo.mp4'; ?> type="video/mp4">
+<section class="banner">
+    <video class="video" autoplay muted loop poster="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?>">
+      <source src="<?php echo get_theme_file_uri() . '/assets/video/StudioKoukakiVideo.mp4'; ?>" type="video/mp4">
     </video>
-    <div class="containerImage"> <img class="logo" src="<?php echo get_theme_file_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants"> </div>
-  </section>
+    <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants"> </section>
   <section id="#story" class="story">
     <h2>L'histoire</h2>
     <article id="" class="story__article">
@@ -19,8 +18,8 @@ get_header();
       <div>
         <h3>Le Lieu</h3>
         <p><?php echo get_theme_mod('place'); ?></p>
-        <img class="bigCloud" src="<?php echo get_theme_file_uri() . '/assets/images/bigCloud.png'; ?>" alt="grand nuage"> 
-        <img class="littleCloud" src="<?php echo get_theme_file_uri() . '/assets/images/littleCloud.png'; ?>" alt="petit nuage">
+        <img class="bigCloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="grand nuage"> 
+        <img class="littleCloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="petit nuage">
       </div>
     </article>
   </section>

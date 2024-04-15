@@ -8,6 +8,16 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeInFromTop {
   0% {
     opacity: 0;
@@ -18,14 +28,12 @@
     transform: translateY(0);
   }
 }
-@keyframes fadeInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  to {
+    transform: rotate(360deg);
   }
 }
 @keyframes fadeInLogo {
@@ -55,6 +63,51 @@
     transform: translate(0);
   }
 }
+@keyframes floatLogo2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, -11px);
+  }
+  50% {
+    transform: translate(0, -15px);
+  }
+  75% {
+    transform: translate(-15px, -10px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.story #place {
+  background: url("./assets/images/image_place.png");
+  position: relative;
+}
+.story #place .bigCloud,
+.story #place .littleCloud {
+  filter: blur(10px);
+  transform: translateX(0);
+  transition: transform 1s ease-in-out;
+  position: absolute;
+}
+.story #place .bigCloud {
+  right: 8%;
+  top: 10%;
+}
+.story #place .littleCloud {
+  right: 34%;
+  top: 34%;
+}
+
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer ul::after, .site-footer::after, .nomination::before, .nomination::after {
+  animation: rotateImage 20s linear infinite;
+}
+
+.site {
+  overflow: hidden;
+}
+
 .banner {
   opacity: 0;
   animation: fadeInFromTop 1.5s ease forwards;
@@ -76,23 +129,178 @@
 }
 
 .animateSection {
-  animation: fadeInFromBottom 1.5s ease forwards;
+  animation: fadeInFromBottom 0.5s ease forwards;
 }
 
 .story, #studio, .nomination {
   opacity: 0;
 }
 
-@keyframes rotateImage {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* CSS */
+h2 span {
+  opacity: 0;
+  display: inline-block;
+  margin-right: 10px;
 }
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer ul::after, .site-footer::after, .nomination::before, .nomination::after {
+h2 .animateTitle {
+  opacity: 0;
+  animation: fadeInFromBottom 0.5s ease forwards;
+  display: inline-block;
+}
+
+.animateTitle:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animateTitle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.carrousel {
+  max-width: 1200px;
+  width: 100%;
+  margin: 50px auto 0;
+}
+.carrousel h3 {
+  text-align: left;
+  background-position: left;
+  padding: 50px 60px;
+  background-image: url("./assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+}
+.carrousel .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.carrousel .swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 440px;
+}
+.carrousel .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.main-navigation {
+  display: flex;
+  position: fixed;
+}
+.main-navigation .site-title {
+  width: 100%;
+  text-align: center;
+  line-height: 80px;
+}
+.main-navigation .menu-toggle {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  cursor: pointer;
+  right: 148px;
+  top: 0px;
+  height: 80px;
+}
+.main-navigation .menu-toggle .line {
+  transition: transform 0.3s ease-in-out;
+  width: 40px;
+  margin: 8px 0;
+  height: 1px;
+}
+.main-navigation .menu-toggle .line:nth-child(1) {
+  transform: translateY(2px) rotate(0deg);
+}
+.main-navigation .menu-toggle .line:nth-child(2) {
+  transform: translateY(2px) rotate(0deg);
+}
+.main-navigation .menu-toggle .line:nth-child(3) {
+  transform: translateY(2px) rotate(0deg);
+}
+.main-navigation .navFullMenu {
+  position: fixed;
+  z-index: 2;
+  background-color: #fff;
+  display: none;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff5e9;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li {
+  position: fixed;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(1) {
+  right: -30px;
+  width: 74px;
+  top: 370px;
   animation: rotateImage 20s linear infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(2) {
+  right: 198px;
+  top: 210px;
+  animation: rotateImage 20s linear infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(3) {
+  left: 212px;
+  width: 70px;
+  top: 420px;
+  animation: rotateImage 20s linear infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(4) {
+  right: -206px;
+  bottom: -140px;
+  width: 400px;
+  animation: rotateImage 20s linear infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(5) {
+  left: -60px;
+  top: 80px;
+  animation: rotateImage 20s linear infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(6) {
+  bottom: 103px;
+  left: 80px;
+  animation: floatLogo 2s ease-in-out infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(7) {
+  left: 280px;
+  top: 154px;
+  animation: floatLogo2 2s ease-in-out infinite;
+}
+.main-navigation .navFullMenu .navFullMenu__animimg li:nth-child(8) {
+  right: 200px;
+  animation: floatLogo2 2s ease-in-out infinite;
+  bottom: 166px;
+}
+.main-navigation .navFullMenu .navFullMenu__menu {
+  text-align: center;
+  margin-top: 40px;
+}
+.main-navigation .navFullMenu .navFullMenu__menu li {
+  margin: 0.8% 0;
+}
+.main-navigation .navFullMenu .navFullMenu__menu li a {
+  font-size: 64px;
+  font-weight: 400;
+}
+.main-navigation .navFullMenu .navFullMenu__menu li a:hover {
+  text-shadow: 0 0 10px rgba(255, 92, 0, 0.9);
+}
+
+.main-navigation.toggled .navFullMenu {
+  display: block;
+  animation: fadeInFromBottom 0.5s ease forwards;
+}
+.main-navigation.toggled .line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.main-navigation.toggled .line:nth-child(2) {
+  opacity: 0;
+}
+.main-navigation.toggled .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .nomination {
@@ -126,85 +334,6 @@
   position: absolute;
   right: -210px;
   top: -170px;
-}
-
-/* CSS */
-@keyframes fadeInFromBottom {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-h2 span {
-  opacity: 0;
-  display: inline-block;
-  margin-right: 10px;
-}
-h2 .animateTitle {
-  opacity: 0;
-  animation: fadeInFromBottom 0.5s ease forwards;
-  display: inline-block;
-}
-
-.animateTitle:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.animateTitle:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.carrousel {
-  max-width: 1200px;
-  width: 100%;
-  margin: 50px auto 0;
-}
-.carrousel h3 {
-  text-align: left;
-  background-position: left;
-  padding: 50px 60px;
-  background-image: url("./assets/images/orange_place_bg.png");
-  margin-bottom: -1em;
-}
-.carrousel .swiper {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.carrousel .swiper .swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 400px;
-  height: 440px;
-}
-.carrousel .swiper .swiper-slide img {
-  display: block;
-  width: 100%;
-}
-
-.story #place {
-  background: url("./assets/images/image_place.png");
-  position: relative;
-}
-.story #place .bigCloud,
-.story #place .littleCloud {
-  filter: blur(10px);
-  transform: translateX(0);
-  transition: transform 1s ease-in-out;
-  position: absolute;
-  z-index: 1;
-}
-.story #place .bigCloud {
-  right: 8%;
-  top: 10%;
-}
-.story #place .littleCloud {
-  right: 34%;
-  top: 34%;
 }
 
 @media (max-width: 767.98px) {

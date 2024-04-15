@@ -8,11 +8,19 @@
  Version: 0.1
  */
 
-
- @import "_animSection";
+ @import '_mixin';
+ @include fadeBottom;
+ @include fadeTop;
+ @include rotateFlower;
+ @include fadeLogo;
+ @include floatLogo;
+ @include floatLogo2;
+ @import '_variable';
+ @import "_animCloud";
  @import "_animFlowers";
- @import "_newSection";
+ @import "_animSection";
  @import "_animText";
  @import "_carrousel";
- @import "_animCloud";
+ @import "_navigation";
+ @import "_newSection";
  @import "_responsive";

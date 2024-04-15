@@ -1,8 +1,7 @@
 .story {
     & #place {
-        background: url('<?php echo get_theme_file_uri() . '/assets/images/image_place.png'; ?>');
+        background: url('./assets/images/image_place.png');
         position: relative;
-        
         .bigCloud,
         .littleCloud {
             filter: blur(10px);
